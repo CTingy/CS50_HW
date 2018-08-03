@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+wow
+{% endblock%}
+
+{% block body %}
+<h1>welcome to the homepage</h1>
+
+{% if is_login %}
+    <h2>你已經登入</h2>
+
+{% else %}
+<form action="/login" method="POST">
+    username:<input type="text" name="username" />
+    password:<input type="password" name="password" />
+    <input type="submit" value="登入" />
+</form>
+{% endif %}
+{% endblock %}
